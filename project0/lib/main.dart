@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project0/widgets/rolscols.dart';
+import 'package:project0/widgets/button.dart';
 
 void main() => runApp(new MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           brightness: Brightness.dark, primaryColor: Colors.deepPurple),
-      home: RolsCols(),
+      home: ButtonWidget(),
     );
   }
 }
