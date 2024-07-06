@@ -3,6 +3,7 @@ import 'package:ui/pages/booking.dart';
 import 'package:ui/pages/contact.dart';
 import 'package:ui/pages/home.dart';
 import 'package:ui/pages/report.dart';
+import 'package:ui/pages/search.dart';
 
 // import 'package:ui/pages/home.dart';
 
@@ -20,6 +21,7 @@ class _MyAppState extends State<MyApp> {
   int myIndex = 0;
   List<Widget> pageList = [
     HomePage(),
+    SearchPage(),
     BookingPage(),
     ReportPage(),
     ContactPage(),
@@ -32,7 +34,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         title: appTitle,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
           useMaterial3: true,
         ),
         home: Scaffold(
@@ -45,7 +47,7 @@ class _MyAppState extends State<MyApp> {
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: Colors.orange,
             unselectedItemColor: Colors.grey,
-            // backgroundColor: Colors.white,
+            backgroundColor: Colors.white,
 
             onTap: (index) {
               setState(() {
@@ -60,22 +62,27 @@ class _MyAppState extends State<MyApp> {
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 label: 'Home',
-                backgroundColor: Colors.yellow,
+                // backgroundColor: Colors.yellow,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: 'Search',
+                // backgroundColor: Colors.blue,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.book),
                 label: 'Bookings',
-                backgroundColor: Colors.blue,
+                // backgroundColor: Colors.blue,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.receipt),
                 label: 'Reports',
-                backgroundColor: Colors.green,
+                // backgroundColor: Colors.green,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.contact_phone),
                 label: 'Contact',
-                backgroundColor: Colors.white,
+                // backgroundColor: Colors.white,
               ),
             ],
           ),
