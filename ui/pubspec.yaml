@@ -72,7 +72,7 @@ flutter:
   #   - images/atorvastatin.jpg
   assets:
     - images/
-    - assets/images/
+    # - assets/images/
     # - images/paracetamol.jpg
     # - images/ibuprofen.jpg
     # - images/amoxicillin.jpg
