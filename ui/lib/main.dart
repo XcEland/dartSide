@@ -20,7 +20,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int myIndex = 0;
   List<Widget> pageList = [
-    HomePage(),
+    MyHomePage(),
     SearchPage(),
     BookingPage(),
     ReportPage(),
