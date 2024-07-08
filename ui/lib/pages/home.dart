@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ui/pages/pathology.dart';
+import 'package:ui/pages/prescription.dart';
+import 'package:ui/pages/radiology.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -66,16 +69,117 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(children: [
           TextField(
               decoration: InputDecoration(
-            hintText: 'Search...',
-            suffixIcon: Icon(Icons.search),
+            hintText: 'Search anything here...',
+            suffixIcon: Icon(
+              Icons.search,
+              color: Colors.orange,
+            ),
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              borderRadius: BorderRadius.all(Radius.circular(18.0)),
               borderSide: BorderSide.none,
             ),
             filled: true,
             fillColor: Colors.grey[200],
             contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-          ))
+          )),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PrescriptionPage()),
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.orange,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.camera,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 4.0),
+                        Text(
+                          'Prescription',
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    )),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PathiologyPage()),
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.biotech,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 4.0),
+                        Text(
+                          'Pathology',
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    )),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RadiologyPage()),
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.medication,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 4.0),
+                        Text(
+                          'Radiology',
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    )),
+              ],
+            ),
+          ),
         ]),
       ),
     );
