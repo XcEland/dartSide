@@ -81,7 +81,7 @@ class _MyAppState extends State<MyApp> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.contact_phone),
-                label: 'Contact',
+                label: 'Deivery',
                 // backgroundColor: Colors.white,
               ),
             ],
