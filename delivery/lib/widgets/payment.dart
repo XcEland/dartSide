@@ -30,7 +30,7 @@ class PaymentWidget extends StatelessWidget {
             ),
           ),
           child: const Text(
-            'Make Payment',
+            'Pay \$200',
             style: TextStyle(
               fontSize: 18.0,
               color: Colors.white,

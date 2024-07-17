@@ -1,5 +1,6 @@
 import 'package:delivery/pages/taxify.dart';
 import 'package:delivery/widgets/location.dart';
+import 'package:delivery/widgets/payment.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         // scaffoldBackgroundColor: const Color.fromRGBO(22, 142, 247, 1),
       ),
-      home: DeliveryLocation(),
+      home: PaymentWidget(),
     );
   }
 }
