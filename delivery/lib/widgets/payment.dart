@@ -18,22 +18,41 @@ class PaymentWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 12),
               const Text(
                 'Payment method',
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 12),
               const Text(
                 'Select the payment method you want',
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: 14),
               ),
               const SizedBox(height: 24),
               PaymentMethodsScreen(),
               const SizedBox(height: 24,),
-              
+              OutlinedButton(onPressed: (){
+
+              }, 
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(
+                  color: Color.fromRGBO(22, 142, 247, 1),
+                ),
+                foregroundColor: const Color.fromRGBO(22, 142, 247, 1),
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                minimumSize: const Size(double.infinity, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              ),
+              child: const Text('Add another card',
+              style: TextStyle(
+                fontSize: 18,
+                color: Color.fromRGBO(22, 142, 247, 1)
+              ),))
             ],
           ),
         ),
@@ -81,7 +100,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
   // Payment methods data
   final List<Map<String, dynamic>> _paymentMethods = [
     {
-      'image': Icons.payment,
+      'image': Icons.paypal_outlined,
       'title': 'PayPal',
     },
     {
@@ -110,24 +129,29 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
           ),
           child: Row(
             children: [
-              Icon(method['image']),
+              Icon(method['image'],
+              size: 40,
+              color: const Color.fromRGBO(22, 142, 247, 1),),
               const SizedBox(width: 16),
               Expanded(
                 child: Text(method['title'],
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),),
               ),
-              Radio<String>(
-                value: method['title'],
-                groupValue: _selectedPaymentMethod,
-                activeColor: const Color.fromRGBO(22, 142, 247, 1),
-                onChanged: (String? value) {
-                  setState(() {
-                    _selectedPaymentMethod = value;
-                  });
-                },
+              Transform.scale(
+                scale: 1.5,
+                child: Radio<String>(
+                  value: method['title'],
+                  groupValue: _selectedPaymentMethod,
+                  activeColor: const Color.fromRGBO(22, 142, 247, 1),
+                  onChanged: (String? value) {
+                    setState(() {
+                      _selectedPaymentMethod = value;
+                    });
+                  },
+                ),
               ),
             ],
           ),
