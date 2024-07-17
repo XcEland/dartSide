@@ -1,4 +1,5 @@
 import 'package:delivery/pages/taxify.dart';
+import 'package:delivery/widgets/addnewcard.dart';
 import 'package:delivery/widgets/location.dart';
 import 'package:delivery/widgets/payment.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         // scaffoldBackgroundColor: const Color.fromRGBO(22, 142, 247, 1),
       ),
-      home: PaymentWidget(),
+      home: AddNewCardWidget(),
     );
   }
 }

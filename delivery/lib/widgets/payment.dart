@@ -1,3 +1,4 @@
+import 'package:delivery/widgets/addnewcard.dart';
 import 'package:flutter/material.dart';
 
 class PaymentWidget extends StatelessWidget {
@@ -35,7 +36,8 @@ class PaymentWidget extends StatelessWidget {
               PaymentMethodsScreen(),
               const SizedBox(height: 24,),
               OutlinedButton(onPressed: (){
-
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const AddNewCardWidget()),);
               }, 
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(
@@ -121,7 +123,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
           margin: const EdgeInsets.only(bottom: 16.0),
           padding: const EdgeInsets.all(16.0),
           decoration: BoxDecoration(
-            color: Colors.grey[200],
+            color: Colors.grey[100],
             borderRadius: BorderRadius.circular(12),
             // border: Border.all(
             //   color: const Color.fromRGBO(22, 142, 247, 1),
