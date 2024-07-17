@@ -1,3 +1,4 @@
+import 'package:delivery/widgets/payment.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -17,7 +18,33 @@ class AddNewCardWidget extends StatelessWidget {
         padding: EdgeInsets.all(8.0),
         child: SafeArea(child: SingleChildScrollView(
         child: NewCardDetailsForm(),
-      ),),)
+      ),),),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const PaymentWidget()),
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color.fromRGBO(22, 142, 247, 1),
+            padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+            minimumSize: const Size(400, 50),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+          ),
+          child: const Text(
+            'Add Card',
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -60,6 +87,111 @@ class _NewCardDetailsFormState extends State<NewCardDetailsForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          Container(
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(top: 12, bottom: 12),
+            decoration: BoxDecoration(
+              color: const Color.fromRGBO(22, 147, 247, 1),
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text('CBZ Bank',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+
+                    ),),
+                    Icon(Icons.payment_outlined, 
+                    color: Colors.white,
+                    size: 30,)
+                  ],
+                ),
+                const SizedBox(height: 20,),
+                Text('1234 5678 9101',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),),
+                const SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Card Holder Name',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                        ),),
+                        const SizedBox(height: 4,),
+                        Text('Mcdonald',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),),
+                      ],
+                    ),
+                    const SizedBox(width: 30,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Expiry Date',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                        ),),
+                        const SizedBox(height: 4,),
+                        Text('02/2025',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),),
+                      ],
+                    ),
+                    const SizedBox(width: 90,),
+                    Stack(
+          alignment: Alignment.centerRight,
+          children: [
+            Positioned(
+              left: 10,
+              child: Container(
+                width: 30, // Adjust the size as needed
+                height: 30, // Adjust the size as needed
+                decoration: BoxDecoration(
+                  color: Colors.grey, // Silver color
+                  shape: BoxShape.circle,
+                ),
+              ),
+            ),
+            Positioned(
+              // right: 0,
+              child: Container(
+                width: 30, // Adjust the size as needed
+                height:30, // Adjust the size as needed
+                decoration: BoxDecoration(
+                  color: Colors.white70, // Milky white color
+                  shape: BoxShape.circle,
+                ),
+              ),
+            ),
+          ],
+        ),
+                  ],
+                )
+
+              ],
+            ),
+          ),
           const SizedBox(height: 8.0),
           const Text(
             'Card Holder Name',

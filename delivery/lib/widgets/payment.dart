@@ -1,4 +1,5 @@
 import 'package:delivery/widgets/addnewcard.dart';
+import 'package:delivery/widgets/paid.dart';
 import 'package:flutter/material.dart';
 
 class PaymentWidget extends StatelessWidget {
@@ -65,7 +66,7 @@ class PaymentWidget extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const PaymentWidget()),
+              MaterialPageRoute(builder: (context) => const PaidWidget()),
             );
           },
           style: ElevatedButton.styleFrom(
