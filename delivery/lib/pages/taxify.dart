@@ -95,15 +95,6 @@ class _SenderDetailsFormState extends State<SenderDetailsForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: _StepIndicator(
-                  currentStep: _currentStep,
-                ),
-              ),
-            ],
-          ),
           const SizedBox(height: 8.0),
           const Text(
             'Sender details',
@@ -264,92 +255,6 @@ class _SenderDetailsFormState extends State<SenderDetailsForm> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class _StepIndicator extends StatelessWidget {
-  final int currentStep;
-
-  const _StepIndicator({
-    Key? key,
-    required this.currentStep,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        _StepCircle(
-          number: 1,
-          isActive: currentStep >= 1,
-        ),
-        _StepDot(),
-        _StepCircle(
-          number: 2,
-          isActive: currentStep >= 2,
-        ),
-        _StepDot(),
-        _StepCircle(
-          number: 3,
-          isActive: currentStep >= 3,
-        ),
-        _StepDot(),
-        _StepCircle(
-          number: 4,
-          isActive: currentStep >= 4,
-        ),
-      ],
-    );
-  }
-}
-
-class _StepCircle extends StatelessWidget {
-  final int number;
-  final bool isActive;
-
-  const _StepCircle({
-    Key? key,
-    required this.number,
-    required this.isActive,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 30.0,
-      height: 30.0,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: isActive
-            ? const Color.fromRGBO(22, 142, 247, 1)
-            : Colors.transparent,
-        border: Border.all(
-          color: isActive ? const Color.fromRGBO(22, 142, 247, 1) : Colors.grey,
-          width: 2.0,
-        ),
-      ),
-      child: Center(
-        child: Text(
-          number.toString(),
-          style: TextStyle(
-            color: isActive ? Colors.white : Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _StepDot extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 10.0,
-      height: 2.0,
-      color: const Color.fromRGBO(22, 142, 247, 1),
     );
   }
 }

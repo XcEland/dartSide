@@ -127,22 +127,7 @@ class DeliveryLocation extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8.0),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(
-                      color: const Color.fromRGBO(22, 142, 247, 1),
-                      width: 2.0,
-                    ),
-                  ),
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: <Widget>[
-                      _DeliveryMethodRow('Normal delivery', 'Free'),
-                      _DeliveryMethodRow('Speed Delivery', '\$300'),
-                    ],
-                  ),
-                ),
+                
                 const SizedBox(height: 16.0),
                 const Text(
                   'Coupon',
@@ -169,7 +154,7 @@ class DeliveryLocation extends StatelessWidget {
                 const SizedBox(height: 8.0),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: Colors.grey[100],
                     borderRadius: BorderRadius.circular(12.0),
                     border: Border.all(
                       color: Color.fromARGB(255, 226, 228, 230),

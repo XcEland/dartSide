@@ -34,7 +34,7 @@ class PaymentWidget extends StatelessWidget {
                 style: TextStyle(fontSize: 14),
               ),
               const SizedBox(height: 24),
-              PaymentMethodsScreen(),
+              const PaymentMethodsScreen(),
               const SizedBox(height: 24,),
               OutlinedButton(onPressed: (){
                 Navigator.push(context,

@@ -26,7 +26,7 @@ class PaidWidget extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 padding: const EdgeInsets.all(20),
-                child: Icon(
+                child: const Icon(
                   Icons.check,
                   color: Colors.white,
                   size: 50,
