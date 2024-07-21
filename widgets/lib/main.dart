@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:widgets/widgets/drawer.dart';
 
 void main(){
-  runApp() => (MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,6 +10,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      title:'Flutter Widgets',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.amber,
+        )
+      ),
+      home: DrawerWidget(),
+    );
   }
 }
